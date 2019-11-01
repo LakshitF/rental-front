@@ -1,0 +1,18 @@
+<script src="js/jquery.min.js"></script>
+
+<script>
+console.log("Location: " + localStorage.location + "\nEmail: " + localStorage.email)	;
+	$.post("http://demo3185989.mockable.io/bookDetails", {"locationId":localStorage.location, "email":localStorage.email},
+	       function(data,status){
+	       	console.log("IN call back function");
+			if (data.msg == "success"){
+				alert("Successfully Booked Cycle");
+				window.location.href = "index.html";	
+			}
+			if (data.msg == "error"){
+				alert("Cycles not available! Booking Failed. Try again Later");
+				window.location.href = "book.html";
+			}
+   });
+
+</script>
