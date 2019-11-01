@@ -1,10 +1,10 @@
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
-   var uname = localStorage.username;
+   var email = localStorage.email;
    var paswd = localStorage.password;
-   $.post("http://localhost:3000/api/login", {"username":uname, "password":paswd},
+   $.post("http://localhost:3000/api/login", {"email":email, "password":paswd},
       function(data, status){
-          console.log(data);
+//           console.log(data);
          if (data.msg==="success"){
             if (typeof(Storage) !== "undefined") {
               // Code for localStorage/sessionStorage.
