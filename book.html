@@ -12,20 +12,11 @@
       }	
       });
 	
-   function sendFormData(){
-	var pickLoc = document.getElementById("PickUp Location");
-	var email = localStorage.email;
-	$.post("http://demo3185989.mockable.io/bookDetails", {"locationId":pickLoc, "email":email},
-	       function(data,status){
-			if (data.msg == "success"){
-				alert("Successfully Booked Cycle");
-				window.location.href = "index.hmtl";	
-			}
-			if (data.msg == "error"){
-				alert("Cycles not available! Booking Failed. Try again Later");
-				window.location.href = "book.html";
-			}
    });
+
+   function storeFormData(){
+//    	console.log("Storing Data");
+	localStorage.location = document.getElementById("PickUp Location");
    
 </script>
 
