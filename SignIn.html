@@ -1,3 +1,14 @@
+<script type="text/javascript">
+   function tosubmit(){         
+      var uname = document.getElementById("uname").value;
+      var paswd = document.getElementById("paswd").value;
+      localStorage.username = uname;
+      localStorage.password = paswd;
+   }
+
+</script>
+
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -23,7 +34,7 @@
       <div class="limiter" >
          <div class="container-login100" style="background-image: url(images/footer-bg.jpg);">
             <div class="wrap-login100">
-               <form class="login100-form validate-form" action="index.html" method="POST">
+               <form class="login100-form validate-form" onsubmit="tosubmit()" action="index.html" method="POST">
                   <span class="login100-form-title p-b-34">
                   Account Login
                   </span>
