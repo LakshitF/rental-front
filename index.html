@@ -1,7 +1,8 @@
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
-
-   $.post("http://localhost:3000/api/login", {},
+   var uname = localStorage.username;
+   var paswd = localStorage.password;
+   $.post("http://localhost:3000/api/login", {"username":uname, "password":paswd},
       function(data, status){
           console.log(data);
          if (data.msg==="success"){
@@ -18,14 +19,16 @@
             let div = document.getElementById('sign');
             div.href = "#";
             div.className = "nav-item cta";
-            div.innerHTML = "Hello, XYZ"; //hello user.username
+            div.innerHTML = "Hello, " + data.user.username;
             // console.log();   
          }  
          else
          {
-
+            alert("Unsuccessful Login! Please login again.");
          }
    });
+//    localStorage.remove("username");
+//    localStorage.remove("password");
 </script>
 
 
