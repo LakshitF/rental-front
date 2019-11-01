@@ -9,8 +9,23 @@
       if (data.msg!="success"){
       	alert("Please LogIn before booking!");
          window.location.href = "SignIn.html";
-      }
+      }	
       });
+	
+   function sendFormData(){
+	var pickLoc = document.getElementById("PickUp Location");
+	var email = localStorage.email;
+	$.post("http://demo3185989.mockable.io/bookDetails", {"locationId":pickLoc, "email":email},
+	       function(data,status){
+			if (data.msg == "success"){
+				alert("Successfully Booked Cycle");
+				window.location.href = "index.hmtl";	
+			}
+			if (data.msg == "error"){
+				alert("Cycles not available! Booking Failed. Try again Later");
+				window.location.href = "book.html";
+			}
+   });
    
 </script>
 
@@ -25,7 +40,7 @@
 	<body>
 		<!-- <script type="text/javascript" src="js/checkLogin.js"></script> -->
 
-		<form id="msform" action="localhost:3000/api/bookCycle" method="POST">
+		<form id="msform" onsubmit="sendFormData()" action="#" method="POST">
 			<ul id="progressbar">
 		      <li class="active">PickUp Location</li>
 		      <li>Time before pickup</li>
@@ -63,7 +78,7 @@
 			</fieldset>
 
 			<fieldset>
-				<input name="time" type="time" name="">
+				<input id="feedback" name="feedback" type="textarea">
 				<input type="button" name="previous" class="previous action-button" value="Previous" >
 				<input type="button" name="next" class="next action-button" value="Next" >
 			</fieldset>
