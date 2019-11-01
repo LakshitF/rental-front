@@ -1,0 +1,77 @@
+<section class="ftco-section ftco-no-pb ftco-no-pt">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="search-wrap-1 ftco-animate p-4">
+                     <form action="#" onclick="" class="search-property-1">
+                        <div class="row">
+                           <div class="col-lg align-items-end">
+                              <div class="form-group">
+                                 <label for="#">PickUp Location</label>
+                                 <div class="form-field">
+                                    <div class="icon"><span class="ion-ios-search"></span></div>
+                                    <select id="PickUp Location">
+                                       <option>Hostel A Parking</option>
+                                       <option>Hostel B Parking</option>
+                                       <option>Hostel C Parking</option>
+                                       <option>Hostel D Parking</option>
+                                       <option>Hostel G Parking</option>
+                                       <option>Hostel H Parking</option>
+                                       <option>Hostel I Parking</option>
+                                       <option>Hostel J Parking</option>
+                                       <option>Hostel K Parking</option>
+                                       <option>Hostel L Parking</option>
+                                       <option>Hostel M Parking</option>
+                                       <option>Hostel N Parking</option>
+                                       <option>Hostel M Parking</option>
+                                       <option>Hostel FRD Parking</option>
+                                       <option>Hostel FRE Parking</option>
+                                       <option>CS Block Parking Area</option>
+                                       <option>TAN Parking Area</option>
+                                       <option>B Block Parking Area</option>
+                                       <option>D&F Block Parking Area</option>
+                                       <option>G Block Parking Area</option>
+                                       <option>H Block Parking Area</option>
+                                       <option>Main Gate Parking Area</option>
+                                    </select>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg align-items-end">
+                              <div class="form-group">
+                                 <label for="#">PickUp Date</label>
+                                 <div class="form-field">
+                                    <div class="icon"><span class="ion-ios-calendar"></span></div>
+                                    <input type="text" class="form-control checkin_date" placeholder="PickUp Date">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg align-items-end">
+                              <div class="form-group">
+                                 <label for="#">Cycle Type</label>
+                                 <div class="form-field">
+                                    <div class="icon"><span class="ion-ios-calendar"></span></div>
+                                    <select id="cycle-type">
+                                       <option value="gear">GearLess</option>
+                                       <option value="gearless">Gear</option>
+                                    </select>
+                                    <!-- <input type="text" class="form-control checkout_date" placeholder="Gear/Gearless"> -->
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg align-items-end">
+                           </div>
+                           <div class="col-lg align-self-end">
+                              <div class="form-group">
+                                 <div class="form-field">
+                                    <input type="submit" value="Book" class="form-control btn btn-primary">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>

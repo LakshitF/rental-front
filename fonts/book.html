@@ -1,0 +1,99 @@
+<script type="text/javascript">
+   var request = new XMLHttpRequest();
+   request.open('GET', url);
+   request.responseType = 'boolean';
+   request.onload = function(){
+       var flag = request.response;
+       // var flag = false;
+       if (flag == true) {
+         //continue to webpage
+         request.send();
+       } 
+       else {
+         //block page
+         alert("You are not logged in");
+       }
+   };
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	   <title>SignUp | CPS</title>
+	   <script src="js/jquery.js"></script>
+	</head>
+	<!-- multistep form -->
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<body>
+		<script type="text/javascript" src="js/checkLogin.js"></script>
+
+		<div id="feed_back"></div>
+
+		<form id="msform" action="url" method="post">
+		   <!-- progressbar -->
+		   <ul id="progressbar">
+		      <li class="active">PickUp Location</li>
+		      <li>Time before pickup</li>
+		   </ul>
+		   <!-- fieldsets -->
+		   <fieldset>
+		      <h2 class="fs-title">Select yout PickUp location</h2>
+		      <h3 class="fs-subtitle">From where do you wwant to pickup?</h3>
+		      <div class="icon"><span class="ion-ios-search"></span></div>
+                                    <select id="PickUp Location">
+                                       <option>Hostel A Parking</option>
+                                       <option>Hostel B Parking</option>
+                                       <option>Hostel C Parking</option>
+                                       <option>Hostel D Parking</option>
+                                       <option>Hostel G Parking</option>
+                                       <option>Hostel H Parking</option>
+                                       <option>Hostel I Parking</option>
+                                       <option>Hostel J Parking</option>
+                                       <option>Hostel K Parking</option>
+                                       <option>Hostel L Parking</option>
+                                       <option>Hostel M Parking</option>
+                                       <option>Hostel N Parking</option>
+                                       <option>Hostel M Parking</option>
+                                       <option>Hostel FRD Parking</option>
+                                       <option>Hostel FRE Parking</option>
+                                       <option>CS Block Parking Area</option>
+                                       <option>TAN Parking Area</option>
+                                       <option>B Block Parking Area</option>
+                                       <option>D&F Block Parking Area</option>
+                                       <option>G Block Parking Area</option>
+                                       <option>H Block Parking Area</option>
+                                       <option>Main Gate Parking Area</option>
+                                    </select>	
+                                 </div>
+		      <input type="button" name="next" class="next action-button" value="Next" >
+		   </fieldset>
+		   <fieldset>
+		      <h2 class="fs-title">Time Before PickUp</h2>
+		      <h3 class="fs-subtitle">How much time before you pickup?</h3>
+		      <input type="time" name="time" placeholder="Time" >
+		      <input type="button" name="previous" class="previous action-button" value="Previous" >
+		      <!-- <input type="button" name="next" class="next action-button" value="Next" > -->
+		      <button type="submit" form="msform" value="Submit" name="submit" class=" submit action-button">Submit</button>
+		</form>
+		<br>
+		<div id="feed-back"></div>
+	</body>
+	<script src="js/result.js"></script>
+	<script src="js/form.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="js/google-map.js"></script>
+	<script src="js/main.js"></script>
+</html>
