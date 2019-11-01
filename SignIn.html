@@ -1,8 +1,8 @@
 <script type="text/javascript">
    function tosubmit(){         
-      var uname = document.getElementById("uname").value;
+      var email = document.getElementById("email").value;
       var paswd = document.getElementById("paswd").value;
-      localStorage.username = uname;
+      localStorage.email = email;
       localStorage.password = paswd;
    }
 
@@ -39,11 +39,11 @@
                   Account Login
                   </span>
                   <div class="wrap-input100 rs1-wrap-input100  m-b-20" >
-                     <input id="first-name" class="input100" type="text" name="email" placeholder="Email">
+                     <input id="email" class="input100" type="email" name="email" placeholder="Email">
                      
                   </div>
                   <div class="wrap-input100 rs2-wrap-input100  m-b-20" data-validate="Type password">
-                     <input class="input100" type="password" name="password" placeholder="Password">
+                     <input id="paswd" class="input100" type="password" name="password" placeholder="Password">
                     
                   </div>
                   <div class="container-login100-form-btn">
