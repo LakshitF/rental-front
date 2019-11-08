@@ -8,10 +8,10 @@
          if (data.msg==="success"){
             if (typeof(Storage) !== "undefined") {
               // Code for localStorage/sessionStorage.
-             
+
               localStorage.tokenval = data.token;
               console.log(localStorage.tokenval)
-            } 
+            }
             else {
               console.log("INVALID")
             }
@@ -20,11 +20,11 @@
             div.href = "#";
             div.className = "nav-item cta";
             div.innerHTML = "Hello, " + data.user.username;
-            // console.log();   
-         }  
+            // console.log();
+         }
          else
          {
-            alert("Unsuccessful Login! Please login again.");
+            console.log("Unsuccessful Login! Please login again.");
          }
    });
 //    localStorage.remove("username");
@@ -79,7 +79,7 @@
                <div class="col-md-9 text text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 
 <!-- class="icon-video popup-vimeo d-flex align-items-center justify-content-center mb-4" -->
-                  <a href="book.html" > 
+                  <a href="book.html" >
                      <span class="ion-ios-play"></span>
                      </a>
 
@@ -117,7 +117,7 @@
                      </ul>
                   </div>
                </div>
-         
+
                <div class="col-md">
                   <div class="ftco-footer-widget mb-4">
                      <h2 class="ftco-heading-2">Have a Questions?</h2>
