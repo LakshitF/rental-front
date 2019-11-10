@@ -4,13 +4,16 @@
    var paswd = localStorage.password;
    if (!localStorage.tokenval){
    $.post("http://rental-back.herokuapp.com/api/login", {"email":email, "password":paswd},
+
+   $.post("http://localhost:3000/api/login", {"email":email, "password":paswd},
       function(data, status){
-         localStorage.remove("password");
+//           console.log(data);
          if (data.msg==="success"){
             if (typeof(Storage) !== "undefined") {
               // Code for localStorage/sessionStorage.
-
+             
               localStorage.tokenval = data.token;
+
               localStorage.username = data.user.username;
               // console.log(localStorage.tokenval)
            } 
@@ -18,28 +21,27 @@
              console.log("INVALID")
           }
           alert("Successful Login");
+
+              console.log(localStorage.tokenval)
+            } 
+            else {
+              console.log("INVALID")
+            }
+//             alert("Successful Login");
+            let div = document.getElementById('sign');
+            div.href = "#";
+            div.className = "nav-item cta";
+            div.innerHTML = "Hello, " + data.user.username;
+
             // console.log();   
          }  
          else
          {
             alert("Unsuccessful Login! Please login again.");
          }
-      });
-   }
-   else {
-      let div = document.getElementById('sign');
-      let name = document.getElementById('dispName');
-      div.href = "index.html";
-      div.className = "nav-item cta";
-      div.innerHTML = "LogOut";
-      div.onclick = logout();
-      name.innerHTML = "Hello, " + localStorage.username;
-   }
-
-   function logout() {
-      localStorage.remove("tokenval");
-      localStorage.remove("email");
-   }
+   });
+//    localStorage.remove("username");
+//    localStorage.remove("password");
 </script>
 
 
@@ -77,8 +79,7 @@
                   <!--<li class="nav-item"><a href="destination.html" class="nav-link">Destination</a></li>-->
                   <li class="nav-item"><a href="support.html" class="nav-link">Support</a></li>
                   <!--<li class="nav-item"><a href="contact.html" class="nav-link"></a></li>-->
-                 <li class="nav-item cta"><a id="sign" href="SignIn.html" class="nav-link">LogIn</a></li>
-                  <li class="nav-item" id="dispName"></li>
+                  <li class="nav-item cta"><a id="sign" href="SignIn.html" class="nav-link">LogIn</a></li>
                </ul>
             </div>
          </div>
