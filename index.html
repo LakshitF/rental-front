@@ -3,7 +3,7 @@
    var email = localStorage.email;
    var paswd = localStorage.password;
    if (!localStorage.tokenval){
-   $.post("http://localhost:3000/api/login", {"email":email, "password":paswd},
+   $.post("http://rental-back.herokuapp.com/api/login", {"email":email, "password":paswd},
       function(data, status){
          localStorage.remove("password");
          if (data.msg==="success"){
@@ -11,7 +11,7 @@
               // Code for localStorage/sessionStorage.
 
               localStorage.tokenval = data.token;
-              localStorage.tokenval = data.user.username;
+              localStorage.username = data.user.username;
               // console.log(localStorage.tokenval)
            } 
            else {
