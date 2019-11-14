@@ -11,7 +11,7 @@ url='https://demo6597716.mockable.io/123'
 
 def senddate(t, loc):
     print(dic[t])
-    payload = {'loc': loc, 'tag': dic[t]}
+    payload = {'location': loc, 'email': dic[t]}
     jfile=json.dumps(payload)
     x = requests.post(url, data=jfile, verify=False)
     #,headers = {'content-type': 'application/json'}
