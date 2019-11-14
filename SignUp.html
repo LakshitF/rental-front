@@ -23,12 +23,15 @@
 				//  console.log(data);
 				if (data.msg == "success") {
 					alert("Account created successfully");
+					
 				}
 				else {
 					alert("Account not created");
 				}
-
+				window.location.href="SignIn.html";
 			});
+			
+			return false;
 	}
 </script>
 
@@ -42,7 +45,7 @@
 <!-- multistep form -->
 
 <body>
-	<form id="msform" onsubmit="sendData()" action="SignIn.html" method="post">
+	<form id="msform" onsubmit="return sendData()" action="SignIn.html" method="post">
 		<!-- progressbar -->
 		<ul id="progressbar">
 			<li class="active">Account Setup</li>
