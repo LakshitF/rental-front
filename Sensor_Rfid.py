@@ -14,8 +14,9 @@ def senddate(t, loc):
     payload = {'loc': loc, 'tag': dic[t]}
     jfile=json.dumps(payload)
     x = requests.post(url, data=jfile, verify=False)
-    #,headers = {'content-type': 'application/json'}
-    print(x.text)
+    while x.status_code==200:
+        print("API not successful, Trying again")
+        x = requests.post(url, data=jfile, verify=False)
 
 ser= serial.Serial()
 ser.port='COM3'
