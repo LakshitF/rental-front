@@ -1,3 +1,4 @@
+<script src="js/jquery.min.js"></script>
 <script>
 	function sendData() {
 		// alert("In send data");	
@@ -12,6 +13,7 @@
 		var phone = document.getElementById("phone").value;
 		var address = document.getElementById("address").value;
 		
+		// $.post("http://demo6590678.mockable.io/signup",
 		$.post("http://rental-back.herokuapp.com/api/signup",
 			{
 				"email": email, "username": username, "password": pass, "roll": roll, "year": year,
