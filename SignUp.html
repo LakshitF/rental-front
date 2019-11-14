@@ -1,3 +1,30 @@
+<script>
+	function sendData(){
+		var email = document.getElementById("email").value;
+		var username = document.getElementById("username").value;
+		var pass = document.getElementById("password").value;
+		var roll = document.getElementById("roll").value;
+		var year = document.getElementById("year").value;
+		var subgrp = document.getElementById("subgrp").value;
+		var fname = document.getElementById("fname").value;
+		var lname = document.getElementById("lname").value;
+		var phone = document.getElementById("phone").value;
+		var address = document.getElementById("address").value;
+		$.post("http://rental-back.herokuapp.com/api/signup",
+		 { "email":email, "username":username ,"password":pass, "roll":roll, "year":year, "subgrp":subgrp, 
+		 "fname":fname, "lname":lname, "phone":phone, "address":address  },
+		 function (data,status){
+			if (data.msg == "success"){
+				alert("Account created successfully");
+			}
+			else{
+				alert("Account not created");
+			}
+
+		 });
+	}
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -7,7 +34,7 @@
 	<!-- multistep form -->
 	
 	<body>
-		<form id="msform" action="SignIn.html" method="post">
+		<form id="msform" onsubmit="sendData()" action="SignIn.html" method="post">
 		   <!-- progressbar -->
 		   <ul id="progressbar">
 		      <li class="active">Account Setup</li>

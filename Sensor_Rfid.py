@@ -6,7 +6,7 @@ urllib3.disable_warnings()
 
 dic={"4 93 D3 83 C7": "abc@gmail.com", "96 70 4B 43 EE":"bcd@yahoo.com"}
 
-url='https://demo6597716.mockable.io/123'
+url='https://rental-back.herokuapp.com/api/returnCycle'
 # url="https://www.mocky.io/v2/5185415ba171ea3a00704eed"
 
 def senddate(t, loc):
