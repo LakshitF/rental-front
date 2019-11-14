@@ -1,99 +1,102 @@
-
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
-   
-   $.post("https://rental-back.herokuapp.com/api/loggedIn", {token:localStorage.tokenval},
-   function (data,status){
-   		// alert(data.status);
-      // alert("Data: " + data + "Status: " + status);
-      if (data.msg!="success"){
-      	alert("Please LogIn before booking!");
-         window.location.href = "SignIn.html";
-      }	
-      });
 
-   function storeFormData(){
-//    	console.log("Storing Data");
-	localStorage.location = document.getElementById("PickUp Location");
-   
+	$.post("https://rental-back.herokuapp.com/api/loggedIn", { token: localStorage.tokenval },
+		function (data, status) {
+			// alert(data.status);
+			// alert("Data: " + data + "Status: " + status);
+			if (data.msg != "success") {
+				alert("Please LogIn before booking!");
+				window.location.href = "SignIn.html";
+			}
+		});
+
+	function storeFormData() {
+		//    	console.log("Storing Data");
+		localStorage.location = document.getElementById("PickUp Location");
+	}
+
 </script>
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	   <title>Book | CPS</title>
-	   <script src="js/jquery.js"></script>
-	</head>
-	<!-- multistep form -->
-	<link rel="stylesheet" type="text/css" href="css/form.css">
-	<body>
-		<!-- <script type="text/javascript" src="js/checkLogin.js"></script> -->
 
-		<form id="msform" onsubmit="storeFormData()" action="process.html" method="POST">
-			<ul id="progressbar">
-		      <li class="active">PickUp Location</li>
-		      <li>Time before pickup</li>
-		      <li>Submit</li>
-		   </ul>
-		   <fieldset>
+<head>
+	<title>Book | CPS</title>
+	<script src="js/jquery.js"></script>
+</head>
+<!-- multistep form -->
+<link rel="stylesheet" type="text/css" href="css/form.css">
+
+<body>
+	<!-- <script type="text/javascript" src="js/checkLogin.js"></script> -->
+
+	<form id="msform" onsubmit="storeFormData()" action="process.html" method="POST">
+		<ul id="progressbar">
+			<li class="active">PickUp Location</li>
+			<li>Time before pickup</li>
+			<li>Submit</li>
+		</ul>
+		<fieldset>
 			<h2 class="fs-title">Select yout PickUp location</h2>
-		      <h3 class="fs-subtitle">From where do you want to pickup?</h3>
-		      <div class="icon"><span class="ion-ios-search"></span></div>
-	            <select id="PickUp Location" name="location">
-	               <option value="Hostel A Parking">Hostel A Parking</option>
-	               <option value="Hostel B Parking">Hostel B Parking</option>
-	               <option value="Hostel C Parking">Hostel C Parking</option>
-	               <option value="Hostel D Parking">Hostel D Parking</option>
-	               <option value="Hostel G Parking">Hostel G Parking</option>
-	               <option value="Hostel H Parking">Hostel H Parking</option>
-	               <option value="Hostel I Parking">Hostel I Parking</option>
-	               <option value="Hostel J Parking">Hostel J Parking</option>
-	               <option value="Hostel K Parking">Hostel K Parking</option>
-	               <option value="Hostel L Parking">Hostel L Parking</option>
-	               <option value="Hostel M Parking">Hostel M Parking</option>
-	               <option value="Hostel N Parking">Hostel N Parking</option>
-	               <option value="Hostel M Parking">Hostel M Parking</option>
-	               <option value="Hostel FRD Parking">Hostel FRD Parking</option>
-	               <option value="Hostel FRE Parking">Hostel FRE Parking</option>
-	               <option value="CS Block Parking Area">CS Block Parking Area</option>
-	               <option value="TAN Parking Area">TAN Parking Area</option>
-	               <option value="B Block Parking Area">B Block Parking Area</option>
-	               <option value="D&F Block Parking Area">D and F Block Parking Area</option>
-	               <option value="G Block Parking Area">G Block Parking Area</option>
-	               <option value="H Block Parking Area">H Block Parking Area</option>
-	               <option value="Main Gate Parking Area">Main Gate Parking Area</option>
-	            </select>
-				<input type="button" name="next" class="next action-button" value="Next" >
-			</fieldset>
+			<h3 class="fs-subtitle">From where do you want to pickup?</h3>
+			<div class="icon"><span class="ion-ios-search"></span></div>
+			<select id="PickUp Location" name="location">
+				<option value="Hostel A Parking">Hostel A Parking</option>
+				<option value="Hostel B Parking">Hostel B Parking</option>
+				<option value="Hostel C Parking">Hostel C Parking</option>
+				<option value="Hostel D Parking">Hostel D Parking</option>
+				<option value="Hostel G Parking">Hostel G Parking</option>
+				<option value="Hostel H Parking">Hostel H Parking</option>
+				<option value="Hostel I Parking">Hostel I Parking</option>
+				<option value="Hostel J Parking">Hostel J Parking</option>
+				<option value="Hostel K Parking">Hostel K Parking</option>
+				<option value="Hostel L Parking">Hostel L Parking</option>
+				<option value="Hostel M Parking">Hostel M Parking</option>
+				<option value="Hostel N Parking">Hostel N Parking</option>
+				<option value="Hostel M Parking">Hostel M Parking</option>
+				<option value="Hostel FRD Parking">Hostel FRD Parking</option>
+				<option value="Hostel FRE Parking">Hostel FRE Parking</option>
+				<option value="CS Block Parking Area">CS Block Parking Area</option>
+				<option value="TAN Parking Area">TAN Parking Area</option>
+				<option value="B Block Parking Area">B Block Parking Area</option>
+				<option value="D and F Block Parking Area">D and F Block Parking Area</option>
+				<option value="G Block Parking Area">G Block Parking Area</option>
+				<option value="H Block Parking Area">H Block Parking Area</option>
+				<option value="Main Gate Parking Area">Main Gate Parking Area</option>
+			</select>
+			<input type="button" name="next" class="next action-button" value="Next">
+		</fieldset>
 
-			<fieldset>
-				<input id="feedback" name="feedback" type="textarea">
-				<input type="button" name="previous" class="previous action-button" value="Previous" >
-				<input type="button" name="next" class="next action-button" value="Next" >
-			</fieldset>
+		<fieldset>
+			<input id="feedback" name="feedback" type="textarea" placeholder="Feedback if any">
+			<input type="button" name="previous" class="previous action-button" value="Previous">
+			<input type="button" name="next" class="next action-button" value="Next">
+		</fieldset>
 
-			<fieldset>
-				<input type="submit" name="submit">
-			</fieldset>
-		</form>
+		<fieldset>
+			<input type="submit" name="submit">
+		</fieldset>
+	</form>
 
-	</body>
-	<script src="js/result.js"></script>
-	<script src="js/form.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
-	<script src="js/scrollax.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-	<script src="js/google-map.js"></script>
-	<script src="js/main.js"></script>
+</body>
+<script src="js/result.js"></script>
+<script src="js/form.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="js/google-map.js"></script>
+<script src="js/main.js"></script>
+
 </html>
