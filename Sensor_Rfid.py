@@ -11,11 +11,12 @@ url='https://demo6597716.mockable.io/123'
 
 def senddate(t, loc):
     print(dic[t])
-    payload = {'location': loc, 'email': dic[t]}
+    payload = {'loc': loc, 'tag': dic[t]}
     jfile=json.dumps(payload)
     x = requests.post(url, data=jfile, verify=False)
-    #,headers = {'content-type': 'application/json'}
-    print(x.text)
+    while x.status_code==200:
+        print("API not successful, Trying again")
+        x = requests.post(url, data=jfile, verify=False)
 
 ser= serial.Serial()
 ser.port='COM3'
