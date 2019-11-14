@@ -1,15 +1,15 @@
 <script>
 	function sendData(){
-		var email = document.getElementsByName("email").value;
-		var username = document.getElementsByName("username").value;
-		var pass = document.getElementsByName("password").value;
-		var roll = document.getElementsByName("roll").value;
-		var year = document.getElementsByName("year").value;
-		var subgrp = document.getElementsByName("subgrp").value;
-		var fname = document.getElementsByName("fname").value;
-		var lname = document.getElementsByName("lname").value;
-		var phone = document.getElementsByName("phone").value;
-		var address = document.getElementsByName("address").value;
+		var email = document.getElementById("email").value;
+		var username = document.getElementById("username").value;
+		var pass = document.getElementById("password").value;
+		var roll = document.getElementById("roll").value;
+		var year = document.getElementById("year").value;
+		var subgrp = document.getElementById("subgrp").value;
+		var fname = document.getElementById("fname").value;
+		var lname = document.getElementById("lname").value;
+		var phone = document.getElementById("phone").value;
+		var address = document.getElementById("address").value;
 		$.post("http://rental-back.herokuapp.com/api/signup",
 		 { "email":email, "username":username ,"password":pass, "roll":roll, "year":year, "subgrp":subgrp, 
 		 "fname":fname, "lname":lname, "phone":phone, "address":address  },
@@ -90,7 +90,5 @@
 	<script src="js/jquery.animateNumber.min.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
 	<script src="js/scrollax.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
 </html>
