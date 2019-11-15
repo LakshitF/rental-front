@@ -1,22 +1,22 @@
 <script src="js/jquery.min.js"></script>
 
 <script>
-console.log("Location: " + localStorage.location + "\nEmail: " + localStorage.email)	;
-	$.post("http://rental-back.herokuapp.com/api/bookCycle", {"locationId":localStorage.location, "email":localStorage.email},
-	       function(data,status){
-	       	// console.log("IN call back function");
-			if (data.msg == "success"){
+	console.log("Location: " + localStorage.location + "\nEmail: " + localStorage.email);
+	$.post("http://rental-back.herokuapp.com/api/bookCycle", { "locationId": localStorage.location, "email": localStorage.email },
+		function (data, status) {
+			// console.log("IN call back function");
+			if (data.msg == "success") {
 				alert("Successfully Booked Cycle");
-				window.location.href = "index.html";	
+				window.location.href = "index.html";
 			}
-			if (data.msg == "error1"){
+			if (data.msg == "error1") {
 				alert("Booking Failed due to pending fines! Try again ater paying");
-				window.location.href  = "payFines.html"
+				window.location.href = "payFines.html"
 			}
-			if (data.msg == "error2"){
+			if (data.msg == "error2") {
 				alert("Cycles not available! Booking Failed. Try again Later");
 				window.location.href = "book.html";
 			}
-   });
+		});
 
 </script>

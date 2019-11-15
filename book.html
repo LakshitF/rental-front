@@ -1,19 +1,14 @@
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
 
-	$.post("https://rental-back.herokuapp.com/api/loggedIn", { token: localStorage.tokenval },
-		function (data, status) {
-			// alert(data.status);
-			// alert("Data: " + data + "Status: " + status);
-			if (data.msg != "success") {
-				alert("Please LogIn before booking!");
-				window.location.href = "SignIn.html";
-			}
-		});
+	if (!localStorage.tokenval) {
+		alert("Please LogIn before booking!");
+		window.location.href = "SignIn.html";
+	}
 
 	function storeFormData() {
 		//    	console.log("Storing Data");
-		localStorage.location = document.getElementById("PickUp Location");
+		localStorage.location = document.getElementById("PickUp Location").value;
 	}
 
 </script>

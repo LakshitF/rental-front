@@ -6,18 +6,19 @@ urllib3.disable_warnings()
 
 dic = {"4 93 D3 83 C7": "abc@gmail.com", "96 70 4B 43 EE": "bcd@yahoo.com"}
 
-url = 'https://rental-back.herokuapp.com/api/returnCycle'
+url = 'https://rental-back.herokuapp.com/api/returncycle'
 # url="https://www.mocky.io/v2/5185415ba171ea3a00704eed"
 
 
 def senddate(t, loc):
     print(dic[t])
     payload = {'location': loc, 'email': dic[t]}
+    headers = {'content-type': 'application/json'}
     jfile = json.dumps(payload)
-    x = requests.post(url, data=jfile, verify=False)
+    x = requests.post(url, data=jfile, verify=False, headers=headers)
     while x.status_code != 200:
         print("API not successful, Trying again")
-        x = requests.post(url, data=jfile, verify=False)
+        x = requests.post(url, data=jfile, verify=False, headers=headers)
 
 
 ser = serial.Serial()
