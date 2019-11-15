@@ -12,7 +12,7 @@ url = 'https://rental-back.herokuapp.com/api/returnCycle'
 
 def senddate(t, loc):
     print(dic[t])
-    payload = {'loc': loc, 'tag': dic[t]}
+    payload = {'location': loc, 'email': dic[t]}
     jfile = json.dumps(payload)
     x = requests.post(url, data=jfile, verify=False)
     while x.status_code != 200:
