@@ -4,6 +4,7 @@
 	console.log("Location: " + localStorage.location + "\nEmail: " + localStorage.email);
 	$.post("http://rental-back.herokuapp.com/api/bookCycle", { "locationId": localStorage.location, "email": localStorage.email },
 		function (data, status) {
+			alert(data.msg);
 			// console.log("IN call back function");
 			if (data.msg == "success") {
 				alert("Successfully Booked Cycle");
