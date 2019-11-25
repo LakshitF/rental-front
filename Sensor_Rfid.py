@@ -4,15 +4,15 @@ import requests
 import urllib3
 urllib3.disable_warnings()
 
-dic = {"4 93 D3 83 C7": "abc@gmail.com", "96 70 4B 43 EE": "bcd@yahoo.com"}
+dic = {"4 93 D3 83 C7": "abc@gmail.com", "96 70 4B 43 EE": "lak@gmail.com"}
+url = 'http://rental-back.herokuapp.com/api/returnCycle'
 
-url = 'https://rental-back.herokuapp.com/api/returncycle'
 # url="https://www.mocky.io/v2/5185415ba171ea3a00704eed"
 
 
 def senddate(t, loc):
     print(dic[t])
-    payload = {'location': loc, 'email': dic[t]}
+    payload = {'locationId': loc, 'email': dic[t]}
     headers = {'content-type': 'application/json'}
     jfile = json.dumps(payload)
     x = requests.post(url, data=jfile, verify=False, headers=headers)
