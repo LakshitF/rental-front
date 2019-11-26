@@ -16,9 +16,15 @@ def senddate(t, loc):
     headers = {'content-type': 'application/json'}
     jfile = json.dumps(payload)
     x = requests.post(url, data=jfile, verify=False, headers=headers)
+    y=x.json()
     while x.status_code != 200:
         print("API not successful, Trying again")
         x = requests.post(url, data=jfile, verify=False, headers=headers)
+        y=x.json()
+    if y["msg"]=="error100":
+        print("Cycle Not Rented")
+    if y["msg"]=="success":
+        print("Cycle Retured")
 
 
 ser = serial.Serial()
